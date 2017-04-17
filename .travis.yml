@@ -13,6 +13,7 @@ script:
   - chmod 777 deploy.sh
   - ./gradlew buildJar buildWar buildCli buildDoc && ./e2e/integration_tests.sh
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./deploy.sh
   on:
